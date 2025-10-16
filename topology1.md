@@ -10,16 +10,39 @@ Elementary formulations in topology focus on the foundational concepts that rema
 Surjectivity - A function 𝑓:𝑋→𝑌 is surjective if every element of 𝑌 is hit by at least one element of 𝑋
 - It’s purely pointwise.
 - It doesn’t know or care about topology, holes, paths, or connectivity.
-
 “∀y∈Y” → for every point in 𝑌
-
 “∃x∈X” → there exists at least one point in 𝑋 mapping to that 𝑦
-
 Doesn’t say how many points map there — could be 1, 2, 100, or infinitely many.
-
 Formally:
-
 ∀𝑦∈𝑌,∃𝑥∈𝑋 such that 𝑓(𝑥)=𝑦.
+If two points hit the same y∈Y
+Example:
+f:{a,b,c}→{1,2},f(a)=1,f(b)=1,f(c)=2
+y=1 → both 𝑎 and 𝑏 map to it.
+The formal statement only requires there exists at least one 𝑥.
+So we can still write:
+∀y∈Y,∃x∈X such that f(x)=y
+Nothing changes, and there’s no need to indicate “both 𝑎 and b hit 1.”
+
+Quotient Map
+Not just any map: must be surjective.
+Not just continuous: must make 𝑌’s topology “the final topology” via the preimage rule.
+Intuition: 
+𝑋 is the “world with structure,” 𝑓 compresses it or identifies points, and 𝑌 gets its topology from 𝑋.
+
+the image of an input value x is the single output value produced by f when passed x. the preimage of an output value y is the set of input values that produce y.
+
+continuity is a property of functions or maps between sets. A function is continuous on a set if it meets three conditions at every point in its domain: it is defined at the point, its limit exists at that point, and the function's value at that point is equal to its limit. A set can be connected, which means it cannot be separated into two non-empty, disjoint open sets. In this sense, a continuous set is one that is connected, such as the real numbers R with the standard topology. 
+
+A function *f: X → Y* is considered continuous if the inverse image of every open set in *Y* is also an open set in *X*. This means it preserves the "openness" of sets under the inverse mapping, which can be understood as mapping "nearby" points to "nearby" points in an intuitive sense.
+
+**Standard for continuity**
+
+- **The definition:** A function *f: X → Y* is continuous if for every open set *V* in the codomain *Y*, its preimage, *f⁻¹(V)*, is an open set in the domain *X*.
+- **The role of topology:** This definition is relative to the specific topologies on *X* and *Y*. The "open sets" are determined by the topology on each space.
+- **Connection to calculus:** For the standard topology on the real numbers (*ℝ*), this definition is equivalent to the familiar one from calculus, which involves limits and *ε-δ* arguments.
+- **Preservation of properties:** Continuous functions are considered the "homomorphisms" of topological spaces because they preserve the topological structure, such as connectivity and compactness.
+
 
 ### T0, T1, T2, T3, and T4 Spaces
 The separation axioms are fundamental concepts in topology, providing a way to classify topological spaces based on their separation properties. Here's a brief overview of each axiom:
